@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C04Paragraph.html</title>
+</head>
+<body>
+    <!-- 
+    수평방향에서의 정렬
+        블럭엘리먼트 : 컨텐츠의 양에 상관없이 하나의 블럭을 차지하므로
+            우츨의 공간이 충분하여 컨텐츠는 우측정렬된다.
+        인라인엘리먼트 : 컨텐츠의 크기만큼만 영역을 차지하므로 컨텐츠가
+            움직일 공간이 없어 정렬되지 않는다. 만약 정렬해야 한다면
+            부모엘리먼트에서 text-align을 설정해야 한다.    
+     -->
+    <h2>문단관련 CSS 속성들</h2>
+
+    <div style="border: 1px blue dotted; width: 400px;"></div>
+    <h2>컨텐츠 수평방향 정렬</h2>
+    <div style="border: 1px solid red; text-align: right;">
+        블럭엘리먼트
+    </div>
+    <!-- span을 정렬하기 위해서 아래처럼 부모 div태그가 필요하다. -->
+    <span style="border: 1px solid blue; text-align: right;">
+        인라인엘리먼트
+    </span>
+    <!-- 
+    line-height : 줄간격. 즉 라인사이의 간격을 띄우는데
+        블럭과 인라인은 조금 다르게 적용된다.
+        블럭 : 컨텐츠의 영역 중 세로 영역이 늘어나서 마치 줄간격이
+            생긴것처럼 보여지게 된다.
+        인라인 : 컨텐츠의 영역은 크기의 변화가 없지만, 지정된 사이즈
+            만큼 줄간격이 생겨 사이가 벌어진다.
+     -->
+    <h3>줄사이 간격</h3>
+    <h4 style="line-height: 5em; border: 1px solid blue;">
+    블럭엘리먼트1에 줄간격 적용</h4>
+    <h4 style="border: 1px solid black;">블럭엘리먼트2</h4>
+    <h4 style="border: 1px solid black;">블럭엘리먼트3</h4>
+    <div class="inline">
+    <span style="line-height: 3em; border: 1px solid black;">
+        인라인엘리먼트1</span><br>
+    <span style="border: 1px solid black;">인라인엘리먼트2</span><br>
+    <span style="border: 1px solid black;">인라인엘리먼트3</span>
+    </div>
+
+    <h3>수직상태에서의 가운데 정렬</h3>
+    <!--  div박스의 height와 line-height의 값을 동일하게 지정하면
+    세로상태에서 가운데 정렬이 된다. -->
+    <h4>블럭엘리먼트 사용시 방법1</h4>
+    <div style="border: 1px solid black; height: 200px; width: 200px;
+    line-height: 200px;">
+    나는 텍스트1
+    </div>
+    <!-- div박스 내부의 padding을 지정해서 텍스트를 아래쪽으로
+    밀어준다. 이경우 세로영역이 늘어나므로 사이즈는 별도로
+    조절해야 한다. -->
+    <h4>블럭엘리먼트 사용시 방법2</h4>
+    <div style="border: 1px solid red; height: 100px; width: 200px;
+        padding-top: 85px;">
+        나는 텍스트2    
+    </div>
+    <!-- 인라인 엘리먼트인 경우 세로상태에서의 가운데 정렬은
+    vertical-align -->
+    <h4>인라인엘리먼트 사용시</h4>
+    <table border="1" width="300">
+        <tr>
+            <td style="height: 100px; vertical-align: top;">인라인엘리먼트 세로정렬</td>
+        </tr>
+        <tr>
+            <td style="height: 100px; vertical-align: middle;">인라인엘리먼트 새로정렬</td>
+        </tr>
+        <tr>
+            <td style="height: 100px; vertical-align: bottom;">인라인엘리먼트 세로정렬</td>
+        </tr>
+    </table>
+
+    <!-- 각기 다른 길이의 단어를 사용함으로써 발생되는 우측의 불규칙적인
+    여백을 깔끔하게 정리해주는 역할을 한다. -->
+    <h2>배분정렬</h2>
+    <p style="border: 1px solid blue; text-align: justify;">
+        특정 정치인에게 좌표를 찍어 이른바 '문자폭탄'을 보내는 문재인 대통령 열성 지지자 자칭 '문파(文派)' 행태를 둘러싼 더불어민주당 내 신경전이 가열되고 있다.
+
+민주당 윤건영 의원은 29일 MBC 라디오에서 "당원들이 의원들한테 문자 보내는 것에 대해서 저희가 선출직이지 않나"라며 "선출직이라면 그 정도는 감당하고 가야 되지 않나 싶다"라고 밝혔다.
+
+같은 당 조응천 의원이 문파를 향해 '의원들을 놓아 달라'고 요구한 걸 어떻게 평가하냐는 진행자 질문에 "조응천 의원님께서는 그런 말씀 하실 수 있지만…"이라며 덧붙인 의견이다.
+
+윤 의원은 현 정부 초대 청와대 국정기획상황실장 출신으로 그동안 '문재인의 복심'이라고 꼽혀왔다.
+
+윤 의원은 다만 "당원들의 의사표현의 수위와 내용이 욕설이나 인신모독이나 이러면 문제라고 생각한다"면서도 "그게 아니라 의사 표현하는 것 정도라면 그 자체를 비난할 수 없다"고 말했다.
+
+또 "과거에 노무현 (전) 대통령이 어려운 시절에도 '대통령 욕해서 주권자인 국민의 속이 풀린다면 얼마든지 하셔라, 그게 온당하다'라는 취지의 말씀도 하신 적이 있다"고 강조했다.
+    </p>
+
+    <h2>들여쓰기</h2>
+    <div style="border: 1px solid red; text-indent: 1em;">
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+    </div>
+    <div style="border: 1px solid blue; padding-left: 10px;">
+        <span style="text-indent: 1em;">
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+        </span>
+    </div>
+</body>
+</html>
